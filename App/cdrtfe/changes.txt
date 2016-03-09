@@ -1,7 +1,7 @@
 Notes:
 ------
 
-This is cdrtfe 1.5.4/1.5.4.1
+This is cdrtfe 1.5.5
 
 The changes may have introduced new bugs, so please test and report,
 if you find a bug.
@@ -15,29 +15,36 @@ Changes:
 --------
 
 * GUI:
-  - The drive selection now shows the drive letter for each drive.
-  - Holding the Shift key during the start of cdrtfe activates the debug mode.
-  - Prevent the message 'Invalid Handle' during disc verification with multiple
-    retries. Clarify the error message.
+  - Support for dpi awareness.
+  - Only use system icons in tree- and listviews.
+  - Removed old and unused icons.
+  - New icons for buttons.
+  - Several options which could be set with the cdrtfe.ini are now
+    available via the GUI.
               
-* Audio CD:
-  - New option in cdrtfe.ini for a less strict format checking of sound files
-    (only flac): section [Audio-CD], RelaxedFormatChecking = 1.
-    This makes it possible to add source files which are not in Audio CD format when
-    using user-defined commandlines (e.g. with ffmpeg) for audio decoding.
+* DAE:
+  - Support for LibParanoia options.
+
+* Disc image:
+  - Added 'multisession' option for writing images.
+
+* Activate DEP and ASLR.
                 
 * Bugfix:
-  - Audio CD: Tracks with identical filenames from different source folders caused
-    problems because of name collisions of temporary files during conversion into 
-    wav format.
-  - cdrtfe 1.5.4.1: A variable was incorrectly initialized, which could prevent the
-    start of the 'Disc image' project.
+  - Changing the language in portable mode did not save this setting to
+    the cdrtfe.ini in the program folder of the portable version. Instead
+    the cdrtfe.ini in the user directory was used, if it existed.
+  - When no cdrtfe.ini existed, the language setting was saved to the
+    cdrtfe_lang.ini. In most cases a user doesn't have the privileges to
+    do this. Now a new cdrtfe.ini will be created.
+  - Added the cdrtools folder to the search path, so that the code pages
+    can be found by mkisofs. 
 
 
 Hinweise:
 ---------
 
-Dies ist cdrtfe 1.5.4
+Dies ist cdrtfe 1.5.5
 
 Durch die Änderungen könnten neue Fehler entstanden sein. Bitte testen
 und Fehler melden.
@@ -51,21 +58,30 @@ Schaffung neuer Übersetzungen ist sehr willkommen.
 -----------
 
 * GUI:
-  - Bei der Laufwerksauswahl auch den Laufwerksbuchstaben anzeigen.
-  - Wenn cdrtfe mit gedrückter Shift-Taste gestartet wird, läuft es im Debug-Mode.
-  - Meldung 'Invalid Handle' beim Vergleich eines ISO-Images durch mehrere
-    Versuche umgehen, sofern möglich. Fehlermeldung verdeutlicht.
+  - Anpassungen für 'dpi awareness'.
+  - Ausschließlich System-Icons in Tree- und Listviews verwenden.
+  - Alte, zusätzliche Icons entfernt.
+  - Neue Icons für Buttons.
+  - Verschiedene Einstellungen, die bereits über die cdrtfe.ini 
+    gesteuert werden konnten, auch über das GUI verfügbar machen.
               
-* Audio-CD:
-  - Option in cdrtfe.ini, die Prüfungen für das Format der Sounddateien (nur FLAC)
-    weniger streng handzuhaben: Sektion [Audio-CD], RelaxedFormatChecking = 1.
-    Dies ermöglicht es, bei Verwendung einer benutzerdefinierten Kommandozeile
-    für die Audio-Dekodierung (z.B. mit ffmpeg), auch Quelldateien zu verwenden, 
-    die nicht dem Audio-CD-Format entsprechen.
+* DAE:
+  - Unterstützung für die LibParanoia-Optionen.
+
+* Disk-Image
+  - Option 'Multisession' hinzugefügt.
+
+* DEP und ASLR aktivieren.
                 
 * Bugfix:
-  - Audio-CD: Gleichnamige Tracks aus verschiedenen Quellverzeichnissen führen
-    zur Problemen, da es beim Konvertieren ins wav-Format zu Namenskollisionen
-    im temporären Verzeichnis kommt.
-  - cdrtfe 1.5.4.1: Falsch initialisierte Variable konnte unter anderem Start
-    des Disk-Image-Projektes verhindern.
+  - Wenn im Portable-Mode die Spracheinstellungen geändert werden und 
+    eine cdrtfe.ini im User-Verzeichnis existiert, wurde diese Änderung
+    in diese Datei gespeichert anstatt in der cdrtfe.ini der portablen
+    Version.
+  - Wenn Spracheinstellungen geändert wurden, ohne daß eine cdrtfe.ini
+    existiert, wurden diese Änderungen in die cdrtfe_lang.ini geschrieben,
+    wofür die nötigen Rechte in der Regel nicht vorhanden sind. 
+    Stattdessen wird jetzt eine neue cdrtfe.ini angelegt.
+  - cdrtools-Ordner in den Suchpfad aufnehmen, damit mkisofs die Zeichen-
+    satztabellen finden kann. Bei den Downloads (Installer und Archive)
+    die Ordnerstruktur korrigiert (lib\siconv statt siconv).
