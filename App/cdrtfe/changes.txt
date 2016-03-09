@@ -1,0 +1,71 @@
+Notes:
+------
+
+This is cdrtfe 1.5.4/1.5.4.1
+
+The changes may have introduced new bugs, so please test and report,
+if you find a bug.
+
+Some of the translations haven't been updated for quite a while. Any
+help regarding the update of existing or the creation of new
+translations is much appreciated.
+
+
+Changes:
+--------
+
+* GUI:
+  - The drive selection now shows the drive letter for each drive.
+  - Holding the Shift key during the start of cdrtfe activates the debug mode.
+  - Prevent the message 'Invalid Handle' during disc verification with multiple
+    retries. Clarify the error message.
+              
+* Audio CD:
+  - New option in cdrtfe.ini for a less strict format checking of sound files
+    (only flac): section [Audio-CD], RelaxedFormatChecking = 1.
+    This makes it possible to add source files which are not in Audio CD format when
+    using user-defined commandlines (e.g. with ffmpeg) for audio decoding.
+                
+* Bugfix:
+  - Audio CD: Tracks with identical filenames from different source folders caused
+    problems because of name collisions of temporary files during conversion into 
+    wav format.
+  - cdrtfe 1.5.4.1: A variable was incorrectly initialized, which could prevent the
+    start of the 'Disc image' project.
+
+
+Hinweise:
+---------
+
+Dies ist cdrtfe 1.5.4
+
+Durch die Änderungen könnten neue Fehler entstanden sein. Bitte testen
+und Fehler melden.
+
+Einige der Übersetzungen wurden schon eine Weile nicht mehr aktualisiert.
+Jedwede Hilfe in bezug auf die Aktualisierung bestehender oder die
+Schaffung neuer Übersetzungen ist sehr willkommen.
+
+
+Änderungen:
+-----------
+
+* GUI:
+  - Bei der Laufwerksauswahl auch den Laufwerksbuchstaben anzeigen.
+  - Wenn cdrtfe mit gedrückter Shift-Taste gestartet wird, läuft es im Debug-Mode.
+  - Meldung 'Invalid Handle' beim Vergleich eines ISO-Images durch mehrere
+    Versuche umgehen, sofern möglich. Fehlermeldung verdeutlicht.
+              
+* Audio-CD:
+  - Option in cdrtfe.ini, die Prüfungen für das Format der Sounddateien (nur FLAC)
+    weniger streng handzuhaben: Sektion [Audio-CD], RelaxedFormatChecking = 1.
+    Dies ermöglicht es, bei Verwendung einer benutzerdefinierten Kommandozeile
+    für die Audio-Dekodierung (z.B. mit ffmpeg), auch Quelldateien zu verwenden, 
+    die nicht dem Audio-CD-Format entsprechen.
+                
+* Bugfix:
+  - Audio-CD: Gleichnamige Tracks aus verschiedenen Quellverzeichnissen führen
+    zur Problemen, da es beim Konvertieren ins wav-Format zu Namenskollisionen
+    im temporären Verzeichnis kommt.
+  - cdrtfe 1.5.4.1: Falsch initialisierte Variable konnte unter anderem Start
+    des Disk-Image-Projektes verhindern.
