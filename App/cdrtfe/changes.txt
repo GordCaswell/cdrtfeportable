@@ -1,50 +1,53 @@
 Notes:
 ------
 
-This is cdrtfe 1.5.5
+This is cdrtfe 1.5.6
 
-The changes may have introduced new bugs, so please test and report,
+The changes may have introduced new bugs, so please test and report
 if you find a bug.
 
 Some of the translations haven't been updated for quite a while. Any
 help regarding the update of existing or the creation of new
 translations is much appreciated.
 
+cdrtfe-1.5.6.exe         The setup variant installs cdrtfe on the
+                         computer. In addition, it includes the 
+                         source code and an uninstall program. 
+
+cdrtfe-1.5.6.msi         The Windows Installer Package is mostly 
+                         identical to the setup variant. Only some
+                         less important setup options are missing. 
+                         It does not include the source code. 
+
+cdrtfe-1.5.6.zip         The zip archive includes the same variant
+                         like the setup program, but without source
+                         code. After unpacking cdrtfe can be used 
+                         without further installation. 
+
+cdrtfe-1.5.6-legacy.exe  This setup is only suitable for installing
+                         cdrtfe on older versions of Windows
+                         (Win98/ME/2k). All other setup variants 
+                         (including the portable version and the
+                         zip archive) cannot be used on Win98/ME/2k. 
+
 
 Changes:
 --------
-
-* GUI:
-  - Support for dpi awareness.
-  - Only use system icons in tree- and listviews.
-  - Removed old and unused icons.
-  - New icons for buttons.
-  - Several options which could be set with the cdrtfe.ini are now
-    available via the GUI.
               
-* DAE:
-  - Support for LibParanoia options.
+* More adjustments for cygwin 1.7 and above.
 
-* Disc image:
-  - Added 'multisession' option for writing images.
+* Ask the user what to do if a disc could not be recognized.
 
-* Activate DEP and ASLR.
+* (Un-)Installer now warns if a running instance of cdrtfe is detected.
                 
 * Bugfix:
-  - Changing the language in portable mode did not save this setting to
-    the cdrtfe.ini in the program folder of the portable version. Instead
-    the cdrtfe.ini in the user directory was used, if it existed.
-  - When no cdrtfe.ini existed, the language setting was saved to the
-    cdrtfe_lang.ini. In most cases a user doesn't have the privileges to
-    do this. Now a new cdrtfe.ini will be created.
-  - Added the cdrtools folder to the search path, so that the code pages
-    can be found by mkisofs. 
+  - Some BD-R(E) and BD/DL discs weren't recognized correctly.
 
 
 Hinweise:
 ---------
 
-Dies ist cdrtfe 1.5.5
+Dies ist cdrtfe 1.5.6
 
 Durch die Änderungen könnten neue Fehler entstanden sein. Bitte testen
 und Fehler melden.
@@ -53,35 +56,40 @@ Einige der Übersetzungen wurden schon eine Weile nicht mehr aktualisiert.
 Jedwede Hilfe in bezug auf die Aktualisierung bestehender oder die
 Schaffung neuer Übersetzungen ist sehr willkommen.
 
+cdrtfe-1.5.6.exe         Die Setup-Variante installiert cdrtfe auf dem
+                         Rechner. Zusätzlich werden auch der Quelltext 
+                         und ein Deinstallationsprogram mitgeliefert. 
+
+cdrtfe-1.5.6.msi         Das Windows Installer-Paket ist größtenteils
+                         identisch mit der Setup-Variante. Es fehlen 
+                         lediglich einige weniger wichtige Einstellungen
+                         für die Installation. Die Quelltexte sind nicht 
+                         enthalten. 
+
+cdrtfe-1.5.6.zip         Das zip-Archiv enthält die gleiche Variante
+                         wie das Setup-Programm, es fehlen lediglich
+                         die Quelltexte. Nach dem Entpacken kann cdrtfe
+                         ohne weitere Installation genutzt werden.
+
+cdrtfe-1.5.6-legacy.exe  Dieses Setup ist ausschließlich für die 
+                         Installation von cdrtfe auf älteren
+                         Versionen von Windows (Win98/ME/2k) 
+                         geeignet. Alle anderen Setup-Varianten 
+                         (auch die portable Version und das zip-Archiv)
+                         können nicht unter Win98/ME/2k verwendet
+                         werden. 
+
 
 Änderungen:
 -----------
 
-* GUI:
-  - Anpassungen für 'dpi awareness'.
-  - Ausschließlich System-Icons in Tree- und Listviews verwenden.
-  - Alte, zusätzliche Icons entfernt.
-  - Neue Icons für Buttons.
-  - Verschiedene Einstellungen, die bereits über die cdrtfe.ini 
-    gesteuert werden konnten, auch über das GUI verfügbar machen.
-              
-* DAE:
-  - Unterstützung für die LibParanoia-Optionen.
+* Weitere Anpassungen an cygwin 1.7 und höher.
 
-* Disk-Image
-  - Option 'Multisession' hinzugefügt.
+* Den Nutzer fragen, was zu tun ist, wenn ein Rohling nicht erkannt
+  werden konnte.
 
-* DEP und ASLR aktivieren.
+* Der (Un-)Installer erkennt laufenden cdrtfe-Prozess und zeigt eine 
+  Warnung an.
                 
 * Bugfix:
-  - Wenn im Portable-Mode die Spracheinstellungen geändert werden und 
-    eine cdrtfe.ini im User-Verzeichnis existiert, wurde diese Änderung
-    in diese Datei gespeichert anstatt in der cdrtfe.ini der portablen
-    Version.
-  - Wenn Spracheinstellungen geändert wurden, ohne daß eine cdrtfe.ini
-    existiert, wurden diese Änderungen in die cdrtfe_lang.ini geschrieben,
-    wofür die nötigen Rechte in der Regel nicht vorhanden sind. 
-    Stattdessen wird jetzt eine neue cdrtfe.ini angelegt.
-  - cdrtools-Ordner in den Suchpfad aufnehmen, damit mkisofs die Zeichen-
-    satztabellen finden kann. Bei den Downloads (Installer und Archive)
-    die Ordnerstruktur korrigiert (lib\siconv statt siconv).
+  - Einige BD-R(E)- und BD/DL-Rohlinge wurden nicht korrekt erkannt.
